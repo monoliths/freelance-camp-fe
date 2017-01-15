@@ -6,8 +6,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
+var proposal_1 = require("./proposal");
 var ProposalNewComponent = (function () {
     function ProposalNewComponent() {
+        this.proposal = new proposal_1.Proposal;
     }
     return ProposalNewComponent;
 }());
