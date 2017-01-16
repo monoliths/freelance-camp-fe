@@ -14,21 +14,21 @@ export class DocumentsComponent {
       title: 'My First Doc',
       description: 'Bacon ipsum dolor amet',
       file_url: 'http://google.com',
-      image_url: 'http://google.com',
+      image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Mistakes-to-avoid-when-hiring-freelancers.jpg/1280px-Mistakes-to-avoid-when-hiring-freelancers.jpg',
       updated_at: '1/14/2017',
     },
     {
       title: 'My Second Doc',
       description: 'Bacon ipsum dolor amet',
       file_url: 'http://google.com',
-      image_url: 'http://google.com',
+      image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Mistakes-to-avoid-when-hiring-freelancers.jpg/1280px-Mistakes-to-avoid-when-hiring-freelancers.jpg',
       updated_at: '1/14/2017',
     },
     {
       title: 'My Third Doc',
       description: 'Bacon ipsum dolor amet',
       file_url: 'http://google.com',
-      image_url: 'http://google.com',
+      image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Mistakes-to-avoid-when-hiring-freelancers.jpg/1280px-Mistakes-to-avoid-when-hiring-freelancers.jpg',
       updated_at: '1/14/2017',
     }
   ];
