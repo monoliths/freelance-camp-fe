@@ -18,7 +18,7 @@ export class DocumentsComponent implements OnInit {
 
   // Inject DocumentService
   constructor(
-    private documentService: DocumentService;
+    private documentService: DocumentService
   ) {}
 
   ngOnInit() {
