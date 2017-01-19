@@ -7,6 +7,7 @@ import { Proposal } from './proposal'
 @Injectable()
 export class ProposalService {
   private proposalsUrl = 'http://localhost:3003/proposals.json'
+  private proposalUrl = 'http://localhost:3003/proposals/${ id }.json'
 
   //Inject Http
   constructor(
@@ -18,6 +19,10 @@ export class ProposalService {
     return this.http.get(this.proposalsUrl)
                     .map((response: Response) => <Proposal[]>response.json())
                     .catch(this.handleError)
+  }
+
+  getProposal(id: number) {
+    return this.http.get('http://localhost:3003/proposals/' + id + '.json');
   }
 
   // In a real world app, we might use a remote logging infrastructure IE Splunk.

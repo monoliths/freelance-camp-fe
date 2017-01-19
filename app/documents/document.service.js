@@ -14,7 +14,7 @@ var Rx_1 = require("rxjs/Rx");
 var DocumentService = (function () {
     function DocumentService(http) {
         this.http = http;
-        this.docuemntsUrl = 'http://localhost:3001/freelance_documents.json';
+        this.docuemntsUrl = 'http://localhost:3002/freelance_documents.json';
     }
     //this returns an Observable of an array of docs
     DocumentService.prototype.getDocuments = function () {

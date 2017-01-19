@@ -16,12 +16,16 @@ var ProposalService = (function () {
     function ProposalService(http) {
         this.http = http;
         this.proposalsUrl = 'http://localhost:3003/proposals.json';
+        this.proposalUrl = 'http://localhost:3003/proposals/${ id }.json';
     }
     // this returns an Observable of an array of proposals
     ProposalService.prototype.getProposals = function () {
         return this.http.get(this.proposalsUrl)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
+    };
+    ProposalService.prototype.getProposal = function (id) {
+        return this.http.get('http://localhost:3003/proposals/' + id + '.json');
     };
     // In a real world app, we might use a remote logging infrastructure IE Splunk.
     ProposalService.prototype.handleError = function (error) {

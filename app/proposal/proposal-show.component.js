@@ -10,30 +10,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var http_1 = require("@angular/http");
+var proposal_1 = require("./proposal");
+var proposal_service_1 = require("./proposal.service");
 var ProposalShowComponent = (function () {
     // Dependency injection, when a ProposalShowComponent is created
     // an ActivatedRoute object gets created along with it.
-    function ProposalShowComponent(route) {
+    function ProposalShowComponent(route, proposalService, http) {
         this.route = route;
+        this.proposalService = proposalService;
+        this.http = http;
     }
     ProposalShowComponent.prototype.ngOnInit = function () {
         var _this = this;
-        // We want to pull in the params by subscribing
-        this.routeId = this.route.params.subscribe(function (params) {
-            // params are pulled in as string, use the plus to convert to a number
-            _this.id = +params['id'];
+        var proposalRequest = this.route.params
+            .flatMap(function (params) {
+            return _this.proposalService.getProposal(+params['id']);
         });
+        proposalRequest.subscribe(function (response) { return _this.proposal = response.json(); });
     };
     return ProposalShowComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", proposal_1.Proposal)
+], ProposalShowComponent.prototype, "proposal", void 0);
 ProposalShowComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'proposal-show',
         templateUrl: 'proposal-show.component.html',
-        styleUrls: ['proposal-show.component.css']
+        styleUrls: ['proposal-show.component.css'],
+        providers: [proposal_service_1.ProposalService]
     }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute])
+    __metadata("design:paramtypes", [router_1.ActivatedRoute,
+        proposal_service_1.ProposalService,
+        http_1.Http])
 ], ProposalShowComponent);
 exports.ProposalShowComponent = ProposalShowComponent;
 //# sourceMappingURL=proposal-show.component.js.map
