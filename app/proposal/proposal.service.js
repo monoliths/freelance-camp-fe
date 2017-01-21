@@ -41,6 +41,13 @@ var ProposalService = (function () {
         console.error(errMsg);
         return Rx_1.Observable.throw(errMsg);
     };
+    ProposalService.prototype.createProposal = function (proposal) {
+        var headers = new http_1.Headers({ 'Content-type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        // params: End point we will post to, json data this post request will take, request option headers
+        return this.http.post(this.proposalsUrl, JSON.stringify(proposal), { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
     return ProposalService;
 }());
 ProposalService = __decorate([

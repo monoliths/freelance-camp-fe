@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-6">
         <div>
-          <form #proposalForm="ngForm">
+          <form (ngSubmit)="createProposal(proposal)" #proposalForm="ngForm">
             <div class="form-group">
               <label for="customer">Customer Name</label>
               <input type="text" class="form-control" id="customer" placeholder="ABC Company" required name="customer" #customer="ngModel"
